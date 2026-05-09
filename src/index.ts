@@ -41,7 +41,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://frontend-al-quran-web-app.vercel.app/", // update after deploying
+      "https://frontend-al-quran-web-app.vercel.app", // update after deploying
     ],
   }),
 );
