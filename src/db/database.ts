@@ -1,7 +1,14 @@
 import Database from "better-sqlite3";
+import fs from "fs";
 import path from "path";
 
-const db = new Database(path.join(__dirname, "../data/quran.db"));
+const dataDir = path.join(__dirname, "../data");
+
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
+
+const db = new Database(path.join(dataDir, "quran.db"));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS surahs (
